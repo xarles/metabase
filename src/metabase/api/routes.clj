@@ -9,6 +9,7 @@
                           [email :as email]
                           [field :as field]
                           [foreignkey :as fk]
+                          [graphql :as graphql]
                           [notify :as notify]
                           [pulse :as pulse]
                           [revision :as revision]
@@ -39,6 +40,7 @@
   (context "/email"        [] (+auth email/routes))
   (context "/field"        [] (+auth field/routes))
   (context "/foreignkey"   [] (+auth fk/routes))
+  (context "/graphql"      [] (+auth graphql/routes))
   (GET     "/health"       [] (if ((resolve 'metabase.core/initialized?))
                                 {:status 200 :body {:status "ok"}}
                                 {:status 503 :body {:status "initializing" :progress ((resolve 'metabase.core/initialization-progress))}}))

@@ -26,6 +26,7 @@
                  [colorize "0.1.1" :exclusions [org.clojure/clojure]] ; string output with ANSI color codes (for logging)
                  [com.cemerick/friend "0.2.1"]                        ; auth library
                  [com.draines/postal "1.11.4"]                        ; SMTP library
+                 [com.graphql-java/graphql-java "1.3"]                ; GraphQL Java library
                  [com.h2database/h2 "1.4.190"]                        ; embedded SQL database
                  [com.mattbertolini/liquibase-slf4j "1.2.1"]          ; Java Migrations lib
                  [com.novemberain/monger "3.0.1"]                     ; MongoDB Driver
