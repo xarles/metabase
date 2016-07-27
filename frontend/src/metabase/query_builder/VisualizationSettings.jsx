@@ -86,6 +86,7 @@ export default class VisualizationSettings extends React.Component {
     }
 
     render() {
+        const { tableMetadata, addField, removeField } = this.props;
         if (this.props.result && this.props.result.error === undefined) {
             return (
                 <div className="VisualizationSettings flex align-center">
@@ -98,6 +99,9 @@ export default class VisualizationSettings extends React.Component {
                         <ChartSettings
                             series={[{ card: this.props.card, data: this.props.result.data }]}
                             onChange={this.props.onUpdateVisualizationSettings}
+                            tableMetadata={tableMetadata}
+                            addField={addField}
+                            removeField={removeField}
                         />
                     </ModalWithTrigger>
                     {this.renderVisualizationSettings()}

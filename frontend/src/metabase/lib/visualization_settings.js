@@ -371,7 +371,7 @@ const SETTINGS = {
             enabled: true
         })),
         getProps: ([{ data: { cols }}]) => ({
-            columnNames: cols.reduce((o, col) => ({ ...o, [col.name]: getFriendlyName(col)}), {})
+            columnsByName: cols.reduce((o, col) => ({ ...o, [col.name]: col }), {})
         })
     },
     "map.type": {

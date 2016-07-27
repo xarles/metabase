@@ -23,12 +23,12 @@ const ChartSettingsTabs = ({ tabs, selectTab, activeTab}) =>
     )}
   </ul>
 
-const Widget = ({ title, hidden, disabled, widget, value, onChange, props }) => {
+const Widget = ({ title, hidden, disabled, widget, value, onChange, props, addField, removeField, tableMetadata }) => {
     const W = widget;
     return (
         <div className={cx("mb3", { hide: hidden, disable: disabled })}>
             { title && <h4 className="mb1">{title}</h4> }
-            { W && <W value={value} onChange={onChange} {...props}/> }
+            { W && <W value={value} onChange={onChange} tableMetadata={tableMetadata} addField={addField} removeField={removeField} {...props}/> }
         </div>
     );
 }
@@ -72,7 +72,7 @@ class ChartSettings extends Component {
     }
 
     render () {
-        const { onClose } = this.props;
+        const { onClose, tableMetadata, addField, removeField } = this.props;
 
         const series = this.getSeries();
 
@@ -96,7 +96,11 @@ class ChartSettings extends Component {
               <div className="Grid flex-full mt3">
                   <div className="Grid-cell Cell--1of3 scroll-y p1">
                       { widgets && widgets.map((widget) =>
-                          <Widget key={widget.id} {...widget} />
+                          <Widget
+                            key={widget.id}
+                            tableMetadata={tableMetadata} addField={addField} removeField={removeField}
+                            {...widget}
+                          />
                       )}
                   </div>
                   <div className="Grid-cell relative">
