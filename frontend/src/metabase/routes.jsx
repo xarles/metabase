@@ -12,6 +12,7 @@ import App from "metabase/App.jsx";
 // auth containers
 import ForgotPasswordApp from "metabase/auth/containers/ForgotPasswordApp.jsx";
 import LoginApp from "metabase/auth/containers/LoginApp.jsx";
+import RegisterApp from "metabase/auth/containers/RegisterApp.jsx";
 import LogoutApp from "metabase/auth/containers/LogoutApp.jsx";
 import PasswordResetApp from "metabase/auth/containers/PasswordResetApp.jsx";
 import GoogleNoAccount from "metabase/auth/components/GoogleNoAccount.jsx";
@@ -113,6 +114,7 @@ export const getRoutes = (store) =>
                     <Route path="login" component={LoginApp} />
                 </Route>
                 <Route path="logout" component={LogoutApp} />
+                <Route path="register" component={RegisterApp} />
                 <Route path="forgot_password" component={ForgotPasswordApp} />
                 <Route path="reset_password/:token" component={PasswordResetApp} />
                 <Route path="google_no_mb_account" component={GoogleNoAccount} />

@@ -17,6 +17,7 @@ export const refreshCurrentUser = createAction("REFRESH_CURRENT_USER", async fun
     return null;
 })
 
+//reducer?
 export const currentUser = handleActions({
     ["SET_USER"]: { next: (state, { payload }) => payload },
     ["REFRESH_CURRENT_USER"]: { next: (state, { payload }) => payload },

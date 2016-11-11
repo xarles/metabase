@@ -29,7 +29,7 @@ export default class DeleteDashboardModal extends Component {
     render() {
         var formError;
         if (this.state.error) {
-            var errorMessage = "Server error encountered";
+            var errorMessage = "系统错误";
             if (this.state.error.data &&
                 this.state.error.data.message) {
                 errorMessage = this.state.error.data.message;
@@ -45,16 +45,16 @@ export default class DeleteDashboardModal extends Component {
 
         return (
             <ModalContent
-                title="Delete Dashboard"
+                title="删除当前仪表盘"
                 closeFn={this.props.onClose}
             >
                 <div className="Form-inputs mb4">
-                    <p>Are you sure you want to do this?</p>
+                    <p>您确定要删除当前仪表盘吗?</p>
                 </div>
 
                 <div className="Form-actions">
-                    <button className="Button Button--danger" onClick={() => this.deleteDashboard()}>Yes</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>No</button>
+                    <button className="Button Button--danger" onClick={() => this.deleteDashboard()}>是</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>否</button>
                     {formError}
                 </div>
             </ModalContent>

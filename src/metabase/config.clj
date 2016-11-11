@@ -9,19 +9,24 @@
   "Global application defaults"
   {;; Database Configuration  (general options?  dburl?)
    :mb-run-mode "prod"
-   :mb-db-type "h2"
-   ;:mb-db-dbname "postgres"
-   ;:mb-db-host "localhost"
-   ;:mb-db-port "5432"
-   ;:mb-db-user "metabase"
-   ;:mb-db-pass "metabase"
-   :mb-db-file "metabase.db"
+   ;; ---------------------- MySQL Config ------------------
+   :mb-db-type "mysql"
+   :mb-db-dbname "techbrain_express"
+   :mb-db-host "localhost"
+   :mb-db-port "3306"
+   :mb-db-user "root"
+   :mb-db-pass "apple000"
+   ;; ---------------------- H2 Config ------------------
+   ;:mb-db-type "h2"
+   ;:mb-db-file "metabase.db"
+   
+   
    :mb-db-automigrate "true"
    :mb-db-logging "true"
    ;; Embedded Jetty Webserver
    ;; check here for all available options:
    ;; https://github.com/ring-clojure/ring/blob/master/ring-jetty-adapter/src/ring/adapter/jetty.clj
-   :mb-jetty-port "3000"
+   :mb-jetty-port "3001"
    :mb-jetty-join "true"
    ;; Other Application Settings
    :mb-password-complexity "normal"

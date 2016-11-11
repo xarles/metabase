@@ -38,11 +38,15 @@ export default class Setup extends Component {
         const { tag } = MetabaseSettings.get('version');
         return (
             <div className="SetupHelp bordered border-dashed p2 rounded mb4" >
-                If you feel stuck, <a className="link" href={"http://www.metabase.com/docs/"+tag+"/setting-up-metabase"} target="_blank">our getting started guide</a> is just a click away.
+                powered by techbrain, <a className="link" href={"http://www.metabase.com/docs/"+tag+"/setting-up-metabase"} target="_blank">our getting started guide</a> is just a click away.
             </div>
         );
     }
-
+//    <div className="absolute z1 bottom left right">
+//      <div className="inline-block">
+//          {this.renderFooter()}
+//      </div>
+//    </div>
     render() {
         let { activeStep, setupComplete, userDetails } = this.props;
 
@@ -50,17 +54,13 @@ export default class Setup extends Component {
             return (
                 <div className="relative full-height flex flex-full layout-centered">
                     <div className="wrapper wrapper--trim text-centered">
-                        <LogoIcon className="text-brand mb4" width={89} height={118}></LogoIcon>
-                        <div className="relative z2 text-centered ml-auto mr-auto" style={{maxWidth: 550}}>
-                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">Welcome to Metabase</h1>
-                            <p className="text-body">Looks like everything is working. Now let’s get to know you, connect to your data, and start finding you some answers!</p>
-                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>Let's get started</button>
+                        <LogoIcon className="text-brand mb4" width={89} height={118} ></LogoIcon>
+                        <div className="relative z2 text-centered ml-auto mr-auto mt4" style={{maxWidth: 550}}>
+                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">不止表达，更为发现！</h1>
+                            <p className="text-body">欢迎使用TechBrain数据可视化系统【个人版】</p>
+                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>开始使用</button>
                         </div>
-                        <div className="absolute z1 bottom left right">
-                            <div className="inline-block">
-                                {this.renderFooter()}
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             );

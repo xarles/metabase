@@ -55,9 +55,9 @@ export default class EditLabels extends Component {
         return (
             <div className={S.editor} style={style}>
                 <div className="wrapper wrapper--trim">
-                    <div className={S.header}>Labels</div>
+                    <div className={S.header}>标签</div>
                 </div>
-                <LabelEditorForm onSubmit={saveLabel} initialValues={{ icon: colors.normal.blue, name: "" }} submitButtonText={"Create Label"} className="wrapper wrapper--trim"/>
+                <LabelEditorForm onSubmit={saveLabel} initialValues={{ icon: colors.normal.blue, name: "" }} submitButtonText={"创建标签"} className="wrapper wrapper--trim"/>
                 <LoadingAndErrorWrapper loading={labelsLoading} error={labelsError} noBackground noWrapper>
                 { () => labels.length > 0 ?
                     <div className="wrapper wrapper--trim">
@@ -66,14 +66,14 @@ export default class EditLabels extends Component {
                             editingLabelId === label.id ?
                                 <li key={label.id} className={S.labelEditing}>
                                     <LabelEditorForm formKey={String(label.id)} className="flex-full" onSubmit={saveLabel} initialValues={label} submitButtonText={"Update Label"}/>
-                                    <a className={" text-grey-1 text-grey-4-hover ml2"} onClick={() => editLabel(null)}>Cancel</a>
+                                    <a className={" text-grey-1 text-grey-4-hover ml2"} onClick={() => editLabel(null)}>取消</a>
                                 </li>
                             :
                                 <li key={label.id} className={S.label}>
                                     <LabelIcon icon={label.icon} size={28} />
                                     <span className={S.name}>{label.name}</span>
-                                    <a className={S.edit} onClick={() => editLabel(label.id)}>Edit</a>
-                                    <Confirm title={`Delete label "${label.name}"`} action={() => deleteLabel(label.id)}>
+                                    <a className={S.edit} onClick={() => editLabel(label.id)}>编辑</a>
+                                    <Confirm title={`删除 标签 "${label.name}"`} action={() => deleteLabel(label.id)}>
                                         <Icon className={S.delete + " text-grey-1 text-grey-4-hover"} name="close" size={14} />
                                     </Confirm>
                                 </li>
@@ -82,7 +82,7 @@ export default class EditLabels extends Component {
                     </div>
                 :
                     <div className="full-height full flex-full flex align-center justify-center">
-                        <EmptyState message="Create labels to group and manage questions." icon="label" />
+                        <EmptyState message="创建标签，以便对图表进行分类." icon="label" />
                     </div>
                 }
                 </LoadingAndErrorWrapper>

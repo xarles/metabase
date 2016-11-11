@@ -65,14 +65,14 @@ const MetabaseSettings = {
 
         const clauseDescription = function(clause) {
             switch (clause) {
-                case "lower": return "lower case letter";
-                case "upper": return "upper case letter";
-                case "digit": return "number";
-                case "special": return "special character";
+                case "lower": return "小写字符";
+                case "upper": return "大写字符";
+                case "digit": return "数字";
+                case "special": return "特殊字符";
             }
         };
 
-        let description = (capitalize === false) ? "must be "+complexity.total+" characters long" : "Must be "+complexity.total+" characters long",
+        let description = (capitalize === false) ? "长度必须大于等于 "+complexity.total+" 个字符" : "长度必须大于等于 "+complexity.total+" 个字符",
             clauses = [];
 
         ["lower", "upper", "digit", "special"].forEach(function(clause) {
@@ -83,7 +83,7 @@ const MetabaseSettings = {
         });
 
         if (clauses.length > 0) {
-            return description+" and include "+clauses.join(", ");
+            return description+" 并且包含 "+clauses.join(", ");
         } else {
             return description;
         }

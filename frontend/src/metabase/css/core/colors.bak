@@ -1,9 +1,6 @@
 :root {
-  --brand-color: #509EE3  /* #509EE3 */;
+  --brand-color: #509EE3;
   --brand-light-color: #CDE3F8;
-  
-  --banner-color: #FFFFFF  /* #509EE3 */;
-  --banner-light-color: #CDE3F8;
 
   --base-grey: #f8f8f8;
   --grey-1: color(var(--base-grey) shade(10%));
@@ -23,7 +20,6 @@
   --orange-color: #F9A354;
   --purple-color: #A989C5;
   --purple-light-color: #C5ABDB;
-  --blue-color: #509EE3;
   --green-color: #9CC177;
   --dark-color: #4C545B;
   --error-color: #EF8C8C;
@@ -34,8 +30,6 @@
 .text-default, :local(.text-default) {
     color: var(--default-font-color);
 }
-
-.text-danger { color: #EEA5A5; }
 
 /* brand */
 .text-brand, :local(.text-brand),
@@ -122,14 +116,18 @@
     color: var(--orange-color);
 }
 
-.text-slate { color: var(--slate-color); }
-.text-slate-light { color: var(--slate-light-color); }
+.text-slate {
+    color: var(--slate-color);
+}
+
+.text-slate-light {
+    color: var(--slate-light-color);
+}
 
 .bg-gold { background-color: var(--gold-color); }
 .bg-purple { background-color: var(--purple-color); }
 .bg-purple-light { background-color: var(--purple-light-color); }
 .bg-green { background-color: var(--green-color); }
-.bg-blue { background-color: var(--blue-color); }
 
 /* alt */
 .bg-alt { background-color: var(--alt-color); }
@@ -152,9 +150,6 @@
 .bg-grey-2 { background-color: var(--grey-2) }
 .bg-grey-3 { background-color: var(--grey-3) }
 .bg-grey-4 { background-color: var(--grey-4) }
-
-.bg-slate { background-color: var(--slate-color); }
-.bg-slate-light { background-color: var(--slate-light-color); }
 
 .text-dark, :local(.text-dark) {
     color: var(--dark-color);

@@ -125,10 +125,10 @@ export default class DashboardsDropdown extends Component {
                                 { dashboards.length === 0 ?
                                     <div className="NavDropdown-content-layer text-white text-centered">
                                         <div className="p2"><div style={this.styles.dashIcon} className="ml-auto mr-auto"></div></div>
-                                        <div className="px2 py1 text-bold">You don’t have any dashboards yet.</div>
-                                        <div className="px2 pb2">Dashboards group visualizations for frequent questions in a single handy place.</div>
+                                        <div className="px2 py1 text-bold">您还没有创建仪表盘.</div>
+                                        <div className="px2 pb2">数据仪表盘将一系列关联的可视化图表组织到一起，以便让您对数据一目了然.</div>
                                         <div className="border-top border-light">
-                                            <a className="Dropdown-item block text-white no-decoration" onClick={this.toggleModal}>Create your first dashboard</a>
+                                            <a className="Dropdown-item block text-white no-decoration" onClick={this.toggleModal}>创建您的第一个数据仪表盘</a>
                                         </div>
                                     </div>
                                 :
@@ -148,7 +148,7 @@ export default class DashboardsDropdown extends Component {
                                             </li>
                                         )}
                                         <li className="block border-top border-light">
-                                            <a data-metabase-event={"Navbar;Dashboard Dropdown;Create Dashboard"} className="Dropdown-item block text-white no-decoration" onClick={this.toggleModal}>Create a new dashboard</a>
+                                            <a data-metabase-event={"Navbar;Dashboard Dropdown;Create Dashboard"} className="Dropdown-item block text-white no-decoration" onClick={this.toggleModal}>创建一个新的仪表盘</a>
                                         </li>
                                     </ul>
                                 }

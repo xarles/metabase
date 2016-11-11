@@ -31,7 +31,7 @@ export default class NextStep extends Component {
         const { next } = this.state;
         if (next) {
             return (
-                <SidebarSection title="Setup Tip" icon="info" extra={<Link to="/admin/settings" className="text-brand no-decoration">View all</Link>}>
+                <SidebarSection title="提示" icon="info" extra={<Link to="/admin/settings" className="text-brand no-decoration">全部</Link>}>
                     <Link to={next.link} className="block p3 no-decoration">
                         <h4 className="text-brand text-bold">{next.title}</h4>
                         <p className="m0 mt1">{next.description}</p>

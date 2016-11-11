@@ -42,7 +42,7 @@ var MetabaseUtils = {
 
     // pretty limited.  just does 0-9 for right now.
     numberToWord: function(num) {
-        var names = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+        var names = ["0","一个","两个","三个","四个","五个","六个","七个","八个","九个"];
 
         if (num >= 0 && num <= 9) {
             return names[num];

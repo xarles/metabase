@@ -81,40 +81,40 @@ export default class EntityList extends Component {
 
     emptyState () {
       switch (this.props.name) {
-        case 'All questions':
+        case '全部图表':
           return {
             icon: 'all',
-            message: 'No questions have been saved yet.'
+            message: '没有任何图表.'
           }
-        case 'Recently viewed':
+        case '最近浏览':
           return {
             icon: 'recents',
-            message: 'You haven\'t viewed any questions recently.'
+            message: '没有任何浏览记录.'
           }
-        case 'Saved by me':
+        case '由我创建':
           return {
             icon: 'mine',
-            message: 'You haven\'t saved any questions yet.'
+            message: '没有任何创建图表'
           }
-        case 'Favorites':
+        case '收藏':
           return {
             icon: 'star',
-            message: 'You haven\'t favorited any questions yet.'
+            message: '没有任何收藏图表.'
           }
-        case 'Most popular':
+        case '最流行':
           return {
             icon: 'popular' ,
             message: 'The most viewed questions across your company will show up here.'
           }
-        case 'Archive':
+        case '归档':
           return {
             icon: 'archive',
-            message: 'If you no longer need a question, you can archive it.'
+            message: '如果标签不再需要，您可以归档到这里.'
           }
         default:
           return {
             icon: 'label',
-            message: 'There aren\'t any questions with this label.'
+            message: '没有符合当前标签的图表.'
           }
       }
     }

@@ -8,6 +8,10 @@
   --margin-2: 1rem;
   --margin-3: 1.5rem;
   --margin-4: 2rem;
+  --margin-5: 2.5rem;
+  --margin-6: 3rem;
+  --margin-7: 3.5rem;
+  --margin-8: 4rem;
 }
 
 .ml-auto, :local(.ml-auto) { margin-left: auto; }
@@ -530,6 +534,11 @@
     .md-mb4 { margin-bottom: var(--margin-4); }
     .md-ml4 { margin-left:   var(--margin-4); }
     .md-mr4 { margin-right:  var(--margin-4); }
+    
+    .md-mt8 { margin-top:    var(--margin-8); }
+    .md-mb8 { margin-bottom: var(--margin-8); }
+    .md-ml8 { margin-left:   var(--margin-8); }
+    .md-mr8 { margin-right:  var(--margin-8); }
 }
 
 @media screen and (--breakpoint-min-lg) {

@@ -130,6 +130,13 @@
                 },
                 {
                   "column": {
+                    "name": "is_guest",
+                    "type": "boolean",
+                    "constraints": {"nullable": false}
+                  }
+                },
+                {
+                  "column": {
                     "name": "is_staff",
                     "type": "boolean",
                     "constraints": {"nullable": false}

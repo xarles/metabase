@@ -1,15 +1,15 @@
 const greetingPrefixes = [
-    'Hey there,',
-    'How\'s it going,',
-    'Howdy,',
-    'Greetings,',
-    'Good to see you,',
+    '嘿,',
+    '感觉怎么样,',
+    '你好,',
+    '祝贺你,',
+    '见到你真好,',
 ];
 
 const subheadPrefixes = [
-    'What do you want to know?',
-    'What\'s on your mind?',
-    'What do you want to find out?',
+    '你想要知道什么?',
+    '你有什么想法？',
+    '你在探索什么？',
 ];
 
 

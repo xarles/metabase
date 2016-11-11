@@ -101,20 +101,21 @@ export default class DashboardHeader extends Component {
                 key="save"
                 actionFn={() => this.onSave()}
                 className="Button Button--small Button--primary text-uppercase"
-                normalText="Save"
-                activeText="Saving…"
-                failedText="Save failed"
-                successText="Saved"
+                normalText="保存"
+                activeText="保存中…"
+                failedText="保存失败"
+                successText="已保存"
             />,
             <a data-metabase-event="Dashboard;Cancel Edits" key="cancel" className="Button Button--small text-uppercase" onClick={() => this.onCancel()}>
-                Cancel
+                取消
             </a>,
             <ModalWithTrigger
                 key="delete"
                 ref="deleteDashboardModal"
                 triggerClasses="Button Button--small text-uppercase"
-                triggerElement="Delete"
+                triggerElement="删除"
             >
+            
                 <DeleteDashboardModal
                     dashboard={this.props.dashboard}
                     onClose={() => this.refs.deleteDashboardModal.toggle()}
@@ -140,11 +141,11 @@ export default class DashboardHeader extends Component {
             // Parameters
             buttons.push(
                 <span>
-                    <Tooltip tooltip="Add a Filter">
+                    <Tooltip tooltip="添加一个过滤条件">
                         <a
                           key="parameters"
                           className={cx("text-brand-hover", { "text-brand": this.state.modal == "parameters" })}
-                          title="Parameters"
+                          title="参数"
                           onClick={() => this.setState({ modal: "parameters" })}
                         >
                             <Icon name="funneladd" size={16} />
@@ -167,7 +168,7 @@ export default class DashboardHeader extends Component {
                     key="history"
                     ref="dashboardHistory"
                     triggerElement={
-                        <Tooltip tooltip="Revision History">
+                        <Tooltip tooltip="修改记录">
                             <span data-metabase-event={"Dashboard;Revisions"}>
                                 <Icon className="text-brand-hover" name="history" size={16} />
                             </span>
@@ -189,8 +190,8 @@ export default class DashboardHeader extends Component {
 
         if (!isFullscreen && !isEditing && canEdit) {
             buttons.push(
-                <Tooltip tooltip="Edit Dashboard">
-                    <a data-metabase-event="Dashboard;Edit" key="edit" title="Edit Dashboard Layout" className="text-brand-hover cursor-pointer" onClick={() => this.onEdit()}>
+                <Tooltip tooltip="更改仪表盘">
+                    <a data-metabase-event="Dashboard;Edit" key="edit" title="仪表盘布局更改" className="text-brand-hover cursor-pointer" onClick={() => this.onEdit()}>
                         <Icon name="pencil" size={16} />
                     </a>
                 </Tooltip>
@@ -203,8 +204,8 @@ export default class DashboardHeader extends Component {
                     key="add"
                     ref="addQuestionModal"
                     triggerElement={
-                        <Tooltip tooltip="Add Card">
-                            <span data-metabase-event="Dashboard;Add Card Modal" title="Add a question to this dashboard">
+                        <Tooltip tooltip="添加图表卡片">
+                            <span data-metabase-event="Dashboard;Add Card Modal" title="添加一个图表到当前仪表盘">
                                 <Icon className={cx("text-brand-hover cursor-pointer", { "Icon--pulse": isEmpty })} name="add" size={16} />
                             </span>
                         </Tooltip>
@@ -230,7 +231,7 @@ export default class DashboardHeader extends Component {
 
         if (!isEditing && isFullscreen) {
             buttons.push(
-                <Tooltip tooltip={isNightMode ? "Daytime mode" : "Nighttime mode"}>
+                <Tooltip tooltip={isNightMode ? "常规模式" : "夜晚模式"}>
                     <span data-metabase-event={"Dashboard;Night Mode;"+!isNightMode}>
                         <NightModeIcon className="text-brand-hover cursor-pointer" key="night" isNightMode={isNightMode} onClick={() => this.props.onNightModeChange(!isNightMode) } />
                     </span>
@@ -241,7 +242,7 @@ export default class DashboardHeader extends Component {
         if (!isEditing && !isEmpty) {
             // option click to enter fullscreen without making the browser go fullscreen
             buttons.push(
-                <Tooltip tooltip={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}>
+                <Tooltip tooltip={isFullscreen ? "退出全屏" : "全屏显示"}>
                     <span data-metabase-event={"Dashboard;Fullscreen Mode;"+!isFullscreen}>
                         <FullscreenIcon className="text-brand-hover cursor-pointer" key="fullscreen" isFullscreen={isFullscreen} onClick={(e) => this.props.onFullscreenChange(!isFullscreen, !e.altKey)} />
                     </span>
@@ -263,11 +264,11 @@ export default class DashboardHeader extends Component {
                 isEditing={this.props.isEditing}
                 isEditingInfo={this.props.isEditing}
                 headerButtons={this.getHeaderButtons()}
-                editingTitle="You are editing a dashboard"
+                editingTitle="您正在编辑一个仪表盘"
                 editingButtons={this.getEditingButtons()}
                 setItemAttributeFn={this.props.setDashboardAttribute}
                 headerModalMessage={this.props.isEditingParameter ?
-                    "Select the field that should be filtered for each card" : null}
+                    "选择一个所有图表共享的过滤条件" : null}
                 onHeaderModalDone={() => this.props.setEditingParameterId(null)}
             >
             </Header>

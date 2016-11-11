@@ -108,7 +108,7 @@
         num-tables         (db/select-one-count 'Table)
         num-cards          (db/select-one-count 'Card)
         num-users          (db/select-one-count 'User)]
-    [{:title       "Add a database"
+    [{:title       "添加一个数据源"
       :group       "Get connected"
       :description "Connect to your data so your whole team can start to explore."
       :link        "/admin/databases/create"

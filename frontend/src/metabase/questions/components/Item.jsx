@@ -34,7 +34,7 @@ const Item = ({ id, name, created, by, selected, favorite, archived, icon, label
             <div className={S.rightIcons}>
                 <LabelPopover
                     triggerElement={
-                        <Tooltip tooltip={"Labels"}>
+                        <Tooltip tooltip={"标签"}>
                             <Icon className={S.tagIcon} name="label" size={20} />
                         </Tooltip>
                     }
@@ -42,13 +42,13 @@ const Item = ({ id, name, created, by, selected, favorite, archived, icon, label
                     triggerClassesOpen={S.open}
                     item={{ id, labels }}
                 />
-                <Tooltip tooltip={favorite ? "Unfavorite" : "Favorite"}>
+                <Tooltip tooltip={favorite ? "取消收藏" : "收藏"}>
                     <Icon className={S.favoriteIcon} name="star" size={20} onClick={() => setFavorited(id, !favorite) }/>
                 </Tooltip>
             </div>
         : null }
         <div className={S.extraIcons}>
-            <Tooltip tooltip={archived ? "Unarchive" : "Archive"}>
+            <Tooltip tooltip={archived ? "取消归档" : "归档"}>
                 <Icon className={S.archiveIcon} name={ archived ? "unarchive" : "archive"} size={20} onClick={() => setArchived(id, !archived, true)} />
             </Tooltip>
         </div>
@@ -76,7 +76,7 @@ const ItemBody = pure(({ id, name, labels, created, by }) =>
             <Labels labels={labels} />
         </div>
         <div className={cx(S.itemSubtitle, { "mt1" : labels.length === 0 })}>
-          {`Created ${created} by ${by}`}
+          {`于 ${created} 由 ${by} 创建`}
         </div>
     </div>
 );

@@ -110,11 +110,11 @@ export const getSectionIsArchive = createSelector(
 );
 
 const sections = [
-    { id: "all",       name: "All questions",   icon: "all" },
-    { id: "favorites", name: "Favorites",       icon: "star" },
-    { id: "recent",    name: "Recently viewed", icon: "recents" },
-    { id: "saved",     name: "Saved by me",     icon: "mine" },
-    { id: "popular",   name: "Most popular",    icon: "popular" }
+    { id: "all",       name: "全部图表",   icon: "all" },
+    { id: "favorites", name: "收藏",       icon: "star" },
+    { id: "recent",    name: "最近浏览", icon: "recents" },
+    { id: "saved",     name: "由我创建",     icon: "mine" },
+    { id: "popular",   name: "最受欢迎",    icon: "popular" }
 ];
 
 export const getSections    = (state) => sections;
@@ -172,7 +172,7 @@ export const getSectionName = createSelector(
             if (section) {
                 return section.name || "";
             } else if (sectionId === "archived") {
-                return "Archive";
+                return "归档";
             }
         }
         return "";

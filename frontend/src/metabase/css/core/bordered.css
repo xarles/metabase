@@ -3,6 +3,11 @@
   --border-size-med: 2px;
   --border-style: solid;
   --border-color: #F0F0F0;
+  
+  --nav-border-size: 2px;
+  --nav-border-size-med: 3px;
+  --nav-border-style: solid;
+  --nav-border-color: #509EE3;
 }
 
 .bordered, :local(.bordered) {
@@ -12,6 +17,13 @@
 .border-bottom, :local(.border-bottom) {
   border-bottom: var(--border-size) var(--border-style) var(--border-color);
 }
+
+
+
+.nav-border-bottom, :local(.border-bottom) {
+  border-bottom: var(--nav-border-size) var(--nav-border-style) var(--nav-border-color);
+}
+
 
 /* ensure that a border-top item inside of a bordred element won't double up */
 .bordered .border-bottom:last-child {

@@ -93,9 +93,9 @@ export default class DashCardCardParameterMapper extends Component {
 
         let tooltipText = null;
         if (disabled) {
-            tooltipText = "This card doesn't have any fields or parameters that can be mapped to this parameter type.";
+            tooltipText = "这个卡片没有任何字段或参数，可以映射到这个参数类型。";
         } else if (noOverlap) {
-            tooltipText = "The values in this field don't overlap with the values of any other fields you've chosen.";
+            tooltipText = "在这个字段中的值与您选择的任何其他字段的值不重叠。";
         }
 
         return (
@@ -121,11 +121,11 @@ export default class DashCardCardParameterMapper extends Component {
                             >
                                 <span className="text-centered mr1">
                                 { disabled ?
-                                    "No valid fields"
+                                    "没有任何有效字段"
                                 : selected ?
                                     selected.name
                                 :
-                                    "Select…"
+                                    "选择…"
                                 }
                                 </span>
                                 { selected ?

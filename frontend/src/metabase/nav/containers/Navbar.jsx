@@ -106,43 +106,49 @@ export default class Navbar extends Component {
 
     renderMainNav() {
         return (
-            <nav className={cx("Nav CheckBg CheckBg-offset relative bg-brand sm-py2 sm-py1 xl-py3", this.props.className)}>
+            <nav className={cx("Nav CheckBg CheckBg-offset relative banner-color sm-py2 sm-py1 xl-py3 nav-border-bottom", this.props.className)}>
                 <ul className="pl4 pr1 flex align-center">
                     <li>
-                        <Link to="/" data-metabase-event={"Navbar;Logo"} className="NavItem cursor-pointer text-white flex align-center my1 transition-background">
-                            <LogoIcon className="text-white m1"></LogoIcon>
+                        <Link to="/" data-metabase-event={"Navbar;Logo"} className="NavItem cursor-pointer text-dark flex align-center my1 pb1 transition-background">
+                            <LogoIcon className="text-dark m1"></LogoIcon>
                         </Link>
                     </li>
                     <li className="pl3">
                         <DashboardsDropdown {...this.props}>
-                            <a data-metabase-event={"Navbar;Dashboard Dropdown;Toggle"} style={this.styles.navButton} className={cx("NavDropdown-button NavItem text-white text-bold cursor-pointer px2 flex align-center transition-background", {"NavItem--selected": this.isActive("/dash/")})}>
+                            <a data-metabase-event={"Navbar;Dashboard Dropdown;Toggle"} style={this.styles.navButton} className={cx("NavDropdown-button NavItem text-dark text-bold cursor-pointer px4 flex align-center transition-background", {"NavItem--selected": this.isActive("/dash/")})}>
                                 <span className="NavDropdown-button-layer">
-                                    Dashboards
+                                    仪表盘
                                     <Icon className="ml1" name={'chevrondown'} size={8}></Icon>
                                 </span>
                             </a>
                         </DashboardsDropdown>
                     </li>
                     <li className="pl1">
-                        <Link to="/questions/all" data-metabase-event={"Navbar;Questions"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-white text-bold no-decoration flex align-center px2 transition-background")} activeClassName="NavItem--selected">Questions</Link>
+                        <Link to="/questions/all" data-metabase-event={"Navbar;Questions"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px4 transition-background")} activeClassName="NavItem--selected">图表</Link>
                     </li>
+                    
                     <li className="pl1">
-                        <Link to="/pulse" data-metabase-event={"Navbar;Pulses"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-white text-bold no-decoration flex align-center px2 transition-background")} activeClassName="NavItem--selected">Pulses</Link>
+                        <Link to="/data" data-metabase-event={"Navbar;data"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px4 transition-background")} activeClassName="NavItem--selected">数据</Link>
                     </li>
-                    <li className="pl1">
-                        <Link to="/reference/guide" data-metabase-event={"Navbar;DataReference"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-white text-bold no-decoration flex align-center px2 transition-background")} activeClassName="NavItem--selected">Data Reference</Link>
-                    </li>
+                   
                     <li className="pl3">
-                        <Link to="/q" data-metabase-event={"Navbar;New Question"} style={this.styles.newQuestion} className="NavNewQuestion rounded inline-block bg-white text-brand text-bold cursor-pointer px2 no-decoration transition-all">New <span className="hide sm-show">Question</span></Link>
+                        <Link to="/q" data-metabase-event={"Navbar;New Question"} style={this.styles.newQuestion} className="NavNewQuestion rounded inline-block bg-blue text-white cursor-pointer px4 no-decoration transition-all"> + <span className="hide sm-show">创建图表</span></Link>
                     </li>
                     <li className="flex-align-right transition-background">
-                        <div className="inline-block text-white"><ProfileLink {...this.props}></ProfileLink></div>
+                        <div className="inline-block text-dark"><ProfileLink {...this.props}></ProfileLink></div>
                     </li>
                 </ul>
             </nav>
         );
     }
 
+//    <li className="pl1">
+//    <Link to="/pulse" data-metabase-event={"Navbar;Pulses"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px2 transition-background")} activeClassName="NavItem--selected">Pulses</Link>
+//</li>
+//<li className="pl1">
+//    <Link to="/reference/guide" data-metabase-event={"Navbar;DataReference"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px2 transition-background")} activeClassName="NavItem--selected">Data Reference</Link>
+//</li>
+//    
     render() {
         let { context, user } = this.props;
 

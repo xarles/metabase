@@ -45,11 +45,11 @@ export default class AddToDashSelectQuestionModal extends Component {
     render() {
         var { error } = this.state;
         if (this.props.cards && this.props.cards.length === 0) {
-            error = { message: "No cards have been saved." };
+            error = { message: "图表添加失败." };
         }
         return (
             <ModalContent
-                title="Add Question to Dashboard"
+                title="在仪表盘中添加一个图表"
                 closeFn={this.props.onClose}
             >
                 <LoadingAndErrorWrapper loading={!this.props.cards} error={error} >

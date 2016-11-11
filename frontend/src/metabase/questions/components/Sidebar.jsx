@@ -16,7 +16,7 @@ const Sidebar = ({ sections, labels, labelsLoading, labelsError, style, classNam
             {sections.map(section =>
                 <QuestionSidebarItem key={section.id} href={"/questions/" + section.id} {...section} />
             )}
-            <QuestionSidebarSectionTitle name="Labels" href="/questions/edit/labels" />
+            <QuestionSidebarSectionTitle name="标签" href="/questions/edit/labels" />
         </ul>
         <LoadingAndErrorWrapper loading={labelsLoading} error={labelsError} noBackground noWrapper>
         { () => labels.length > 0 ? // eslint-disable-line
@@ -30,13 +30,13 @@ const Sidebar = ({ sections, labels, labelsLoading, labelsError, style, classNam
                 <div>
                   <Icon name="label" />
                 </div>
-                Create labels to group and manage questions.
+                创建标签，以便对图表分类。
             </div>
         }
         </LoadingAndErrorWrapper>
         <ul>
             <li className={S.divider} />
-            <QuestionSidebarItem name="Archive" href="/questions/archived" icon="archive" />
+            <QuestionSidebarItem name="归档" href="/questions/archived" icon="archive" />
         </ul>
     </div>
 

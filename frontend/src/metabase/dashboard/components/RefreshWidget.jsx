@@ -10,13 +10,13 @@ import CountdownIcon from "metabase/components/icons/CountdownIcon.jsx";
 import cx from "classnames";
 
 const OPTIONS = [
-    { name: "Off",        period:    null },
-    { name: "1 minute",   period:  1 * 60 },
-    { name: "5 minutes",  period:  5 * 60 },
-    { name: "10 minutes", period: 10 * 60 },
-    { name: "15 minutes", period: 15 * 60 },
-    { name: "30 minutes", period: 30 * 60 },
-    { name: "60 minutes", period: 60 * 60 }
+    { name: "关闭",        period:    null },
+    { name: "1 分钟",   period:  1 * 60 },
+    { name: "5 分钟",  period:  5 * 60 },
+    { name: "10 分钟", period: 10 * 60 },
+    { name: "15 分钟", period: 15 * 60 },
+    { name: "30 分钟", period: 30 * 60 },
+    { name: "60 分钟", period: 60 * 60 }
 ];
 
 export default class RefreshWidget extends Component {
@@ -27,18 +27,18 @@ export default class RefreshWidget extends Component {
             <PopoverWithTrigger
                 ref="popover"
                 triggerElement={elapsed == null ?
-                    <Tooltip tooltip="Auto-refresh">
+                    <Tooltip tooltip="自动刷新">
                         <ClockIcon width={18} height={18} className={className} />
                     </Tooltip>
                 :
-                    <Tooltip tooltip={"Refreshing in " + Math.floor(remaining / 60) + ":" + (remaining % 60 < 10 ? "0" : "") + Math.round(remaining % 60)}>
+                    <Tooltip tooltip={"刷新频率： " + Math.floor(remaining / 60) + ":" + (remaining % 60 < 10 ? "0" : "") + Math.round(remaining % 60)}>
                         <CountdownIcon width={18} height={18} className="text-green" percent={Math.min(0.95, (period - elapsed) / period)}/>
                     </Tooltip>
                 }
                 targetOffsetY={10}
             >
                 <div className={styles.popover}>
-                    <div className={styles.title}>Auto Refresh</div>
+                    <div className={styles.title}>自动刷新</div>
                     <RefreshOptionList>
                         { OPTIONS.map(option =>
                             <RefreshOption key={option.period} name={option.name} period={option.period} selected={option.period === period} onClick={() => { this.refs.popover.close(); onChangePeriod(option.period) }} />

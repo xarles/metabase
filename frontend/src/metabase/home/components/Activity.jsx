@@ -66,11 +66,11 @@ export default class Activity extends Component {
 
     userName(user, currentUser) {
         if (user && currentUser && user.id === currentUser.id) {
-            return "You";
+            return "您";
         } else if (user) {
             return user.first_name;
         } else {
-            return "Metabase";
+            return "TechBrain 个人版";
         }
     }
 
