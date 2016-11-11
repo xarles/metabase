@@ -181,7 +181,7 @@ export default class QueryHeader extends Component {
                     key="save"
                     ref="saveModal"
                     triggerClasses="h4 text-grey-4 text-brand-hover text-uppercase"
-                    triggerElement="Save"
+                    triggerElement="保存"
                 >
                     <SaveQuestionModal
                         card={this.props.card}
@@ -228,17 +228,17 @@ export default class QueryHeader extends Component {
                         key="save"
                         actionFn={() => this.onSave(this.props.card, false)}
                         className="cursor-pointer text-brand-hover bg-white text-grey-4 text-uppercase"
-                        normalText="SAVE CHANGES"
-                        activeText="Saving…"
-                        failedText="Save failed"
-                        successText="Saved"
+                        normalText="保存更新"
+                        activeText="保存中…"
+                        failedText="保存失败"
+                        successText="保存成功"
                     />
                 ]);
 
                 // cancel button
                 buttonSections.push([
                     <a key="cancel" className="cursor-pointer text-brand-hover text-grey-4 text-uppercase" onClick={this.onCancel}>
-                        CANCEL
+                        取消
                     </a>
                 ]);
 
@@ -375,7 +375,7 @@ export default class QueryHeader extends Component {
             <div>
                 <HeaderBar
                     isEditing={this.props.isEditing}
-                    name={this.props.isNew ? "New question" : this.props.card.name}
+                    name={this.props.isNew ? "新建图表" : this.props.card.name}
                     description={this.props.card ? this.props.card.description : null}
                     breadcrumb={(!this.props.card.id && this.props.originalCard) ? (<span className="pl2">started from <a className="link" onClick={this.onFollowBreadcrumb}>{this.props.originalCard.name}</a></span>) : null }
                     buttons={this.getHeaderButtons()}

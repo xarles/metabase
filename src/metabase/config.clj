@@ -10,15 +10,15 @@
   {;; Database Configuration  (general options?  dburl?)
    :mb-run-mode "prod"
    ;; ---------------------- MySQL Config ------------------
-   :mb-db-type "mysql"
-   :mb-db-dbname "techbrain_express"
-   :mb-db-host "localhost"
-   :mb-db-port "3306"
-   :mb-db-user "root"
-   :mb-db-pass "apple000"
+   ;:mb-db-type "mysql"
+   ;:mb-db-dbname "techbrain_express"
+   ;:mb-db-host "localhost"
+   ;:mb-db-port "3306"
+   ;:mb-db-user "root"
+   ;:mb-db-pass "apple000"
    ;; ---------------------- H2 Config ------------------
-   ;:mb-db-type "h2"
-   ;:mb-db-file "metabase.db"
+   :mb-db-type "h2"
+   :mb-db-file "metabase.db"
    
    
    :mb-db-automigrate "true"

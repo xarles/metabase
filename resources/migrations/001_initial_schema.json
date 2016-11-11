@@ -132,7 +132,7 @@
                   "column": {
                     "name": "is_guest",
                     "type": "boolean",
-                    "constraints": {"nullable": false}
+                    "constraints": {"nullable": true}
                   }
                 },
                 {

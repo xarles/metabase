@@ -99,7 +99,7 @@ export default class ProfileLink extends Component {
                                 : null }
 
                                 <li>
-                                    <a data-metabase-event={"Navbar;Profile Dropdown;Help "+tag} className="Dropdown-item block text-white no-decoration" href={"http://www.metabase.com/docs/"+tag} target="_blank">
+                                    <a data-metabase-event={"Navbar;Profile Dropdown;Help "+tag} className="Dropdown-item block text-white no-decoration" href={"http://zpudata.com/feedback/feedback"} target="_blank">
                                         帮助
                                     </a>
                                 </li>
@@ -141,23 +141,10 @@ export default class ProfileLink extends Component {
                             <div className="text-brand pb2">
                                 <LogoIcon width={48} height={48} />
                             </div>
-                            <h2 style={{fontSize: "1.75em"}} className="text-dark">Thanks for using Metabase!</h2>
-                            <div className="pt2">
-                                <h3 className="text-dark mb1">You're on version {tag}</h3>
-                                <p className="text-grey-3 text-bold">Built on {date}</p>
-                                { !/^v\d+\.\d+\.\d+$/.test(tag) &&
-                                    <div>
-                                    { _.map(versionExtra, (value, key) =>
-                                        <p key={key} className="text-grey-3 text-bold">{capitalize(key)}: {value}</p>
-                                    ) }
-                                    </div>
-                                }
-                            </div>
+                            <h2 style={{fontSize: "1.75em"}} className="text-dark">感谢使用TechBrain Basic!</h2>
+                           
                         </div>
-                        <div style={{borderWidth: "2px"}} className="p2 h5 text-centered text-grey-3 border-top">
-                            <span className="block"><span className="text-bold">Metabase</span> is a Trademark of Metabase, Inc</span>
-                            <span>and is built with care in San Francisco, CA</span>
-                        </div>
+                       
                     </Modal>
                 : modalOpen === "logs" ?
                     <Modal className="Modal Modal--wide" onClose={this.closeModal}>

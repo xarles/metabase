@@ -160,11 +160,11 @@ export default class GuiQueryEditor extends Component {
 
             // TODO: proper check for isFilterComplete(filter)
             if (Query.canAddFilter(this.props.query.query)) {
-                addFilterButton = this.renderAdd((filterList ? null : "Add filters to narrow your answer"), null, "addFilterTarget");
+                addFilterButton = this.renderAdd((filterList ? null : "添加过滤条件，以缩小查询范围"), null, "addFilterTarget");
             }
         } else {
             enabled = false;
-            addFilterButton = this.renderAdd("Add filters to narrow your answer", null, "addFilterTarget");
+            addFilterButton = this.renderAdd("添加过滤条件，以缩小查询范围", null, "addFilterTarget");
         }
 
         return (
@@ -212,7 +212,7 @@ export default class GuiQueryEditor extends Component {
             // TODO: move this into AggregationWidget?
             return (
                 <div className="Query-section Query-section-aggregation disabled">
-                    <a className="QueryOption p1 flex align-center">Raw data</a>
+                    <a className="QueryOption p1 flex align-center">原始数据</a>
                 </div>
             );
         }
@@ -292,7 +292,7 @@ export default class GuiQueryEditor extends Component {
     renderDataSection() {
         return (
             <div className={"GuiBuilder-section GuiBuilder-data flex align-center arrow-right"}>
-                <span className="GuiBuilder-section-label Query-label">Data</span>
+                <span className="GuiBuilder-section-label Query-label">数据库／表</span>
                 { this.props.features.data ?
                     <DataSelector
                         ref="dataSection"
@@ -320,7 +320,7 @@ export default class GuiQueryEditor extends Component {
 
         return (
             <div className="GuiBuilder-section GuiBuilder-filtered-by flex align-center" ref="filterSection">
-                <span className="GuiBuilder-section-label Query-label">Filtered by</span>
+                <span className="GuiBuilder-section-label Query-label">过滤</span>
                 {this.renderFilters()}
             </div>
         );
@@ -334,7 +334,7 @@ export default class GuiQueryEditor extends Component {
 
         return (
             <div className="GuiBuilder-section GuiBuilder-view flex align-center px1" ref="viewSection">
-                <span className="GuiBuilder-section-label Query-label">View</span>
+                <span className="GuiBuilder-section-label Query-label">统计</span>
                 {this.renderAggregation()}
                 {this.renderBreakouts()}
             </div>

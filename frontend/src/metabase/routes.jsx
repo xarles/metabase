@@ -93,6 +93,21 @@ const IsAuthenticated = MetabaseIsSetup(UserIsAuthenticated(({ children }) => ch
 const IsAdmin = MetabaseIsSetup(UserIsAuthenticated(UserIsAdmin(({ children }) => children)));
 const IsNotAuthenticated = MetabaseIsSetup(UserIsNotAuthenticated(({ children }) => children));
 
+
+//权限控制的中间服务
+function forGuest(nextState, replace, next) {
+  //获取传输过来的数据
+  console.log(nextState);
+  var user = nextState.currentUser;
+
+  if (user && user.is_superuser) {
+    next();
+  } else {
+    replace('/dash/1')
+    next();
+  }
+}
+
 export const getRoutes = (store) =>
     <Route component={App}>
         {/* SETUP */}
@@ -109,7 +124,7 @@ export const getRoutes = (store) =>
         }}>
             {/* AUTH */}
             <Route path="/auth">
-                <IndexRedirect to="/auth/login" />
+               
                 <Route component={IsNotAuthenticated}>
                     <Route path="login" component={LoginApp} />
                 </Route>
@@ -122,8 +137,9 @@ export const getRoutes = (store) =>
 
             {/* MAIN */}
             <Route component={IsAuthenticated}>
+                
                 {/* HOME */}
-                <Route path="/" component={HomepageApp} />
+                <Route path="/" component={HomepageApp} onEnter={forGuest}/>
 
                 {/* DASHBOARD */}
                 <Route path="/dash/:dashboardId" component={DashboardApp} />

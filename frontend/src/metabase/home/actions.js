@@ -16,7 +16,7 @@ export const FETCH_RECENT_VIEWS = 'FETCH_RECENT_VIEWS';
 export const fetchActivity = createThunkAction(FETCH_ACTIVITY, function() {
     return async function(dispatch, getState) {
         let activity = await ActivityApi.list();
-        for (var ai of activity) {
+        for (var ai of activity) {    
             ai.timestamp = moment(ai.timestamp);
             ai.hasLinkableModel = function() {
                 return (_.contains(["card", "dashboard"], this.model));

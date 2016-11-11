@@ -342,7 +342,7 @@ export default class DataSelector extends Component {
                 className="text-brand"
                 sections={sections}
                 searchable={true}
-                searchPlaceholder="Find a segment"
+                searchPlaceholder="查询数据集"
                 onChange={this.onChangeSegment}
                 itemIsSelected={(item) => item.segment ? item.segment.id === this.getSegmentId() : false}
                 itemIsClickable={(item) => item.segment && !item.disabled}
@@ -369,19 +369,19 @@ export default class DataSelector extends Component {
             } else if (segment) {
                 content = <span className="text-grey no-decoration">{segment.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Pick a segment or table</span>;
+                content = <span className="text-grey-4 no-decoration">选择表或数据集</span>;
             }
         } else if (this.props.includeTables) {
             if (table) {
                 content = <span className="text-grey no-decoration">{table.display_name || table.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Select a table</span>;
+                content = <span className="text-grey-4 no-decoration">选择表或数据集</span>;
             }
         } else {
             if (database) {
                 content = <span className="text-grey no-decoration">{database.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Select a database</span>;
+                content = <span className="text-grey-4 no-decoration">选择数据源</span>;
             }
         }
 

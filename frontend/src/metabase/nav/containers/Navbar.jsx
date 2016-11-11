@@ -105,6 +105,7 @@ export default class Navbar extends Component {
     }
 
     renderMainNav() {
+        let { context, user } = this.props;
         return (
             <nav className={cx("Nav CheckBg CheckBg-offset relative banner-color sm-py2 sm-py1 xl-py3 nav-border-bottom", this.props.className)}>
                 <ul className="pl4 pr1 flex align-center">
@@ -123,17 +124,18 @@ export default class Navbar extends Component {
                             </a>
                         </DashboardsDropdown>
                     </li>
+
+                    { user.is_superuser ?
                     <li className="pl1">
                         <Link to="/questions/all" data-metabase-event={"Navbar;Questions"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px4 transition-background")} activeClassName="NavItem--selected">图表</Link>
                     </li>
-                    
-                    <li className="pl1">
-                        <Link to="/data" data-metabase-event={"Navbar;data"} style={this.styles.navButton} className={cx("NavItem cursor-pointer text-dark text-bold no-decoration flex align-center px4 transition-background")} activeClassName="NavItem--selected">数据</Link>
-                    </li>
-                   
+                    : null }
+                     { user.is_superuser ?
                     <li className="pl3">
                         <Link to="/q" data-metabase-event={"Navbar;New Question"} style={this.styles.newQuestion} className="NavNewQuestion rounded inline-block bg-blue text-white cursor-pointer px4 no-decoration transition-all"> + <span className="hide sm-show">创建图表</span></Link>
                     </li>
+                    : null }
+
                     <li className="flex-align-right transition-background">
                         <div className="inline-block text-dark"><ProfileLink {...this.props}></ProfileLink></div>
                     </li>
@@ -154,6 +156,7 @@ export default class Navbar extends Component {
 
         if (!user) return null;
 
+        
         switch (context) {
             case "admin": return this.renderAdminNav();
             case "auth": return null;

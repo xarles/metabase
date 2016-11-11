@@ -108,7 +108,7 @@ export default class DashboardsDropdown extends Component {
     }
 
     render() {
-        let { children, dashboards } = this.props;
+        let { children, dashboards ,user} = this.props;
         let { dropdownOpen, modalOpen } = this.state;
 
         return (
@@ -147,9 +147,13 @@ export default class DashboardsDropdown extends Component {
                                                 </Link>
                                             </li>
                                         )}
+                                        { user.is_superuser ? 
                                         <li className="block border-top border-light">
                                             <a data-metabase-event={"Navbar;Dashboard Dropdown;Create Dashboard"} className="Dropdown-item block text-white no-decoration" onClick={this.toggleModal}>创建一个新的仪表盘</a>
                                         </li>
+                                        :
+                                        null
+                                        }
                                     </ul>
                                 }
                             </div>

@@ -11,31 +11,36 @@ export default class ActivityItem extends Component {
     };
 
     render() {
-        const { item, description, userColors } = this.props;
+        const { item, description, userColors,user } = this.props;
 
+
+       
+        
+       
         return (
-            <div className="ml1 flex align-center mr2">
-                <span>
-                    { item.user ?
-                        <UserAvatar user={item.user} background={userColors} style={{color: '#fff', borderWidth: '0'}}/>
-                    :
-                        <IconBorder style={{color: '#B8C0C8'}}>
-                            <Icon name='sync' size={16} />
-                        </IconBorder>
-                    }
-                </span>
 
-                <div className="ml2 full flex align-center">
-                    <div className="text-grey-4">
-                        <span className="text-dark">{description.userName}</span>&nbsp;
+                <div className="ml1 flex align-center mr2"  >
+                    <span>
+                        { item.user ?
+                            <UserAvatar user={item.user} background={userColors} style={{color: '#fff', borderWidth: '0'}}/>
+                        :
+                            <IconBorder style={{color: '#B8C0C8'}}>
+                                <Icon name='sync' size={16} />
+                            </IconBorder>
+                        }
+                    </span>
 
-                        {description.summary}
-                    </div>
-                    <div className="flex-align-right text-right text-grey-2">
-                        {description.timeSince}
+                    <div className="ml2 full flex align-center">
+                        <div className="text-grey-4">
+                            <span className="text-dark">{description.userName}</span>&nbsp;
+
+                            {description.summary}
+                        </div>
+                        <div className="flex-align-right text-right text-grey-2">
+                            {description.timeSince}
+                        </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }
