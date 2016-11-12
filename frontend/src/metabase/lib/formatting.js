@@ -55,7 +55,7 @@ function formatMajorMinor(major, minor, options = {}) {
         return (
             <span>
                 <span style={{ minWidth: options.majorWidth + "em" }} className="inline-block text-right text-bold">{major}</span>
-                {" - "}
+                {"  "}
                 <span>{minor}</span>
             </span>
         );
@@ -71,33 +71,33 @@ function formatTimeWithUnit(value, unit, options = {}) {
     }
     switch (unit) {
         case "hour": // 12 AM - January 1, 2015
-            return formatMajorMinor(m.format("h A"), m.format("MMMM D, YYYY"), options);
+            return formatMajorMinor(m.format("HH"), m.format("YYYY-MM-DD"), options);
         case "day": // January 1, 2015
-            return m.format("MMMM D, YYYY");
+            return m.format("YYYY-MM-DD");
         case "week": // 1st - 2015
             // force 'en' locale for now since our weeks currently always start on Sundays
             m = m.locale("en");
             return formatMajorMinor(m.format("wo"), m.format("gggg"), options);
         case "month": // January 2015
             return options.jsx ?
-                <div><span className="text-bold">{m.format("MMMM")}</span> {m.format("YYYY")}</div> :
-                m.format("MMMM") + " " + m.format("YYYY");
+                <div><span className="text-bold">{m.format("MM")}</span> {m.format("YYYY")}</div> :
+                m.format("MM") + " " + m.format("YYYY");
         case "year": // 2015
             return m.format("YYYY");
         case "quarter": // Q1 - 2015
             return formatMajorMinor(m.format("[Q]Q"), m.format("YYYY"), { ...options, majorWidth: 0 });
         case "hour-of-day": // 12 AM
-            return moment().hour(value).format("h A");
+            return moment().hour(value).format("HH");
         case "day-of-week": // Sunday
-            return moment().day(value - 1).format("dddd");
+            return moment().day(value - 1).format("do");
         case "week-of-year": // 1st
             return moment().week(value).format("wo");
         case "month-of-year": // January
-            return moment().month(value - 1).format("MMMM");
+            return moment().month(value - 1).format("MM");
         case "quarter-of-year": // January
             return moment().quarter(value).format("[Q]Q");
         default:
-            return m.format("LLLL");
+            return m.format("YYYY-MM-DD");
     }
 }
 
